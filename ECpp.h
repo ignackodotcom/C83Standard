@@ -19,8 +19,8 @@
 
 
 #if defined(__embedded_cplusplus)
-#define ECPP								(long)__embedded_cplusplus
-#define ECXX								(long)__embedded_cplusplus
+#define ECPP								__embedded_cplusplus
+#define ECXX								__embedded_cplusplus
 #endif /* __embedded_cplusplus */
 
 

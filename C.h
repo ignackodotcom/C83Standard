@@ -60,7 +60,7 @@
 * C_VERSION definition, since CKR/C78, ..., C23
 */
 #if defined(__STDC_VERSION__)
-#define C_VERSION					(long)__STDC_VERSION__
+#define C_VERSION					__STDC_VERSION__
 #elif defined(__STDC__)
 #define C_VERSION					C89
 #else

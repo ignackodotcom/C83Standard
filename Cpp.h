@@ -57,8 +57,8 @@
 * CPP_VERSION/CXX_VERSION definition, since CPPPRE/CXXPRE, ..., CPP23/CXX23
 */
 #if defined(__cplusplus)
-#define CPP_VERSION						(long)__cplusplus
-#define CXX_VERSION						(long)__cplusplus
+#define CPP_VERSION						__cplusplus
+#define CXX_VERSION						__cplusplus
 #else
 #define CPP_VERSION						CPPPRE
 #define CXX_VERSION						CXXPRE
