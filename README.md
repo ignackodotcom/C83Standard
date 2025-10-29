@@ -186,4 +186,5 @@ Another example of use EC++
 ```
 
 # Updates
+2025 10 29 fixed bug when getting version from predefined version constants (casting to long)<br>
 <br>

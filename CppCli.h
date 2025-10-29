@@ -32,8 +32,8 @@
 * CPPCLI_VERSION/CXXCLI_VERSION definition, since CPPCLIPRE/CXXCLIPRE, ..., CPPCLI/CXXCLI
 */
 #if defined(__cplusplus_cli)
-#define CPPCLI_VERSION						__cplusplus_cli
-#define CXXCLI_VERSION						__cplusplus_cli
+#define CPPCLI_VERSION						(long)__cplusplus_cli
+#define CXXCLI_VERSION						(long)__cplusplus_cli
 #else
 #define CPPCLI_VERSION						CPPCLIPRE
 #define CXXCLI_VERSION						CXXCLIPRE
