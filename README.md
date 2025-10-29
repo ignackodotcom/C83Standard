@@ -186,4 +186,5 @@ Another example of use EC++
 ```
 
 # Updates
+2025 10 29 Fixed error when detecting __cplusplus for Turbo C++<br>
 <br>
