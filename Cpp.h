@@ -20,6 +20,10 @@
 #define CPP_H		20260101L
 
 
+/* cpp none */
+#define NOCPP							0L
+#define NOCXX							NOCPP
+
 #define CPPPRE							1L
 #define CXXPRE							CPPPRE /* alias */
 
@@ -65,8 +69,8 @@
 		#define CXX_VERSION				__cplusplus
 	#endif
 #else
-#define CPP_VERSION						CPPPRE
-#define CXX_VERSION						CXXPRE
+	#define CPP_VERSION					NOCPP
+	#define CXX_VERSION					NOCXX
 #endif
 
 

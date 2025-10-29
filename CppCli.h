@@ -20,6 +20,10 @@
 #define CPPCLI_H		20260101L
 
 
+/* cpp cli none */
+#define NOCPPCLI							0L
+#define NOCXXCLI							NOCPPCLI
+
 #define CPPCLIPRE							1L
 #define CXXCLIPRE							CPPCLIPRE /* alias */
 
@@ -32,11 +36,16 @@
 * CPPCLI_VERSION/CXXCLI_VERSION definition, since CPPCLIPRE/CXXCLIPRE, ..., CPPCLI/CXXCLI
 */
 #if defined(__cplusplus_cli)
-#define CPPCLI_VERSION						__cplusplus_cli
-#define CXXCLI_VERSION						__cplusplus_cli
+	#if __cplusplus_cli < CPPCLI
+		#define CPPCLI_VERSION				CPPCLIPRE
+		#define CXXCLI_VERSION				CXXCLIPRE
+	#else
+		#define CPPCLI_VERSION				__cplusplus_cli
+		#define CXXCLI_VERSION				__cplusplus_cli
+	#endif
 #else
-#define CPPCLI_VERSION						CPPCLIPRE
-#define CXXCLI_VERSION						CXXCLIPRE
+	#define CPPCLI_VERSION					NOCPPCLI
+	#define CXXCLI_VERSION					NOCXXCLI
 #endif
 
 

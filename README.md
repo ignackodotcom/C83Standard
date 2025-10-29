@@ -187,4 +187,5 @@ Another example of use EC++
 
 # Updates
 2025 10 29 Fixed error when detecting __cplusplus for Turbo C++<br>
+2025 10 29 NOC, NOCPP/NOCXX, NOCPPCLI/NOCXXCLI defines added<br>
 <br>

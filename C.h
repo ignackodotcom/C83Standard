@@ -20,6 +20,9 @@
 #define C_H		20260101L
 
 
+/* C none */
+#define NOC							0L
+
 /* non standard *//* do not use */
 #define CKR							197801L
 #define C78							CKR /* alias */
@@ -59,12 +62,20 @@
 /******************************************************************************
 * C_VERSION definition, since CKR/C78, ..., C23
 */
+#if !defined(__cplusplus) && !defined(__cplusplus_cli) && !defined(__embedded_cplusplus)
+
 #if defined(__STDC_VERSION__)
 #define C_VERSION					__STDC_VERSION__
 #elif defined(__STDC__)
 #define C_VERSION					C89
 #else
 #define C_VERSION					CKR
+#endif
+
+#else
+
+#define C_VERSION					NOC
+
 #endif
 
 
