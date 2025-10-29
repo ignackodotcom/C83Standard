@@ -63,7 +63,7 @@
 #if defined(__cplusplus)
 	#if defined(__TURBOC__)
 		#define CPP_VERSION				CPPPRE
-		#define CXX_VERSION				CPPPRE
+		#define CXX_VERSION				CXXPRE
 	#else
 		#define CPP_VERSION				__cplusplus
 		#define CXX_VERSION				__cplusplus
