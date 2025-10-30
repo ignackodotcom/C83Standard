@@ -1,12 +1,12 @@
 # C83Standard
 
+## C, Cpp, CppCli, DspC, ECpp standards identification macros
+
 3rd edition of the library
 
 part of the C83Project<br>
 support for 8.3 file naming conventions with the exception of the main include and code files<br>
 support C89 and higher editions<br>
-
-c, cpp, cppcli, dspc, ecpp standards identification macros
 
 <br>
 
@@ -188,4 +188,10 @@ Another example of use EC++
 # Updates
 2025 10 29 Fixed error when detecting __cplusplus for Turbo C++<br>
 2025 10 29 NOC, NOCPP/NOCXX, NOCPPCLI/NOCXXCLI defines added<br>
+<br>
+2025 10 30 C.h renamed to PC.h<br>
+2025 10 30 Cpp.h renamed to PCpp.h<br>
+2025 10 30 CppCli.h renamed to PCppCli.h<br>
+2025 10 30 DspC.h renamed to PDspC.h<br>
+2025 10 30 ECpp.h renamed to PECpp.h<br>
 <br>
