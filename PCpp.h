@@ -58,7 +58,7 @@
 
 
 /******************************************************************************
-* CPP_VERSION/CXX_VERSION definition, since CPPPRE/CXXPRE, ..., CPP23/CXX23
+* CPP_VERSION/CXX_VERSION definition, since NOCPP/NOCXX, CPPPRE/CXXPRE, ..., CPP23/CXX23
 */
 #if defined(__cplusplus)
 	#if defined(__TURBOC__)
@@ -77,7 +77,7 @@
 /******************************************************************************
 **  Basic GET macros
 */
-/* since CPPPRE/CXXPRE, ..., CPP23/CXX23 */
+/* since NOCPP/NOCXX, CPPPRE/CXXPRE, ..., CPP23/CXX23 */
 #define GET_CPP_VERSION()				CPP_VERSION
 #define GET_CXX_VERSION()				CXX_VERSION
 

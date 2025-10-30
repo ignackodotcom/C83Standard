@@ -33,7 +33,7 @@
 
 
 /******************************************************************************
-* CPPCLI_VERSION/CXXCLI_VERSION definition, since CPPCLIPRE/CXXCLIPRE, ..., CPPCLI/CXXCLI
+* CPPCLI_VERSION/CXXCLI_VERSION definition, since NOCPPCLI/NOCXXCLI, CPPCLIPRE/CXXCLIPRE, ..., CPPCLI/CXXCLI
 */
 #if defined(__cplusplus_cli)
 	#if __cplusplus_cli < CPPCLI
@@ -52,7 +52,7 @@
 /******************************************************************************
 **  Basic GET macros
 */
-/* since CPPCLIPRE/CXXCLIPRE, CPPCLI/CXXCLI */
+/* since NOCPPCLI/NOCXXCLI, CPPCLIPRE/CXXCLIPRE, CPPCLI/CXXCLI */
 #define GET_CPPCLI_VERSION()				CPPCLI_VERSION
 #define GET_CXXCLI_VERSION()				CXXCLI_VERSION
 

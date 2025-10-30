@@ -60,7 +60,7 @@
 
 
 /******************************************************************************
-* C_VERSION definition, since CKR/C78, ..., C23
+* C_VERSION definition, since NOC, CKR/C78, ..., C23
 */
 #if !defined(__cplusplus) && !defined(__cplusplus_cli) && !defined(__embedded_cplusplus)
 
@@ -95,7 +95,7 @@
 /* 1 STDC, 0 not STDC */
 #define GET_C_STD()					C_STD
 
-/* since CKR/C78, ..., C23 */
+/* since NOC, CKR/C78, ..., C23 */
 #define GET_C_VERSION()				C_VERSION
 
 #define GET_C_VERSION_YEAR()		(C_VERSION/100L)

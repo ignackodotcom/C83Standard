@@ -194,4 +194,5 @@ Another example of use EC++
 2025 10 30 CppCli.h renamed to PCppCli.h<br>
 2025 10 30 DspC.h renamed to PDspC.h<br>
 2025 10 30 ECpp.h renamed to PECpp.h<br>
+2025 10 30 Description bug fixed<br>
 <br>
