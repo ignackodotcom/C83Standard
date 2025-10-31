@@ -1,6 +1,6 @@
 # C83Standard
 
-## C, Cpp, CppCli, DspC, ECpp standards identification macros
+## C, Cpp, CppCli, DspC, ECpp standards identification macros for C and C++
 
 3rd edition of the library
 
