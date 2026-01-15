@@ -22,7 +22,7 @@
 
 /* cpp none */
 #define NOCPP							0L
-#define NOCXX							NOCPP
+#define NOCXX							NOCPP /* alias */
 
 #define CPPPRE							1L
 #define CXXPRE							CPPPRE /* alias */

@@ -53,9 +53,9 @@
 * C_STD definition, 1 STDC, 0 not STDC
 */
 #if defined(__STDC__)
-#define C_STD						__STDC__
+	#define C_STD					__STDC__
 #else
-#define C_STD						0
+	#define C_STD					0
 #endif
 
 
@@ -64,28 +64,34 @@
 */
 #if !defined(__cplusplus) && !defined(__cplusplus_cli) && !defined(__embedded_cplusplus)
 
-#if defined(__STDC_VERSION__)
-#define C_VERSION					__STDC_VERSION__
-#elif defined(__STDC__)
-#define C_VERSION					C89
-#else
-#define C_VERSION					CKR
-#endif
+	#if defined(__STDC_VERSION__)
+		#define C_VERSION			__STDC_VERSION__
+	#elif defined(_MSC_VER)
+		/* Legacy MSVC does not have __STDC_VERSION__, but it is approximately C89 */
+		#define C_VERSION			C89
+	#elif defined(__STDC__)
+		#define C_VERSION			C89
+	#else
+		#define C_VERSION			CKR
+	#endif
 
 #else
 
-#define C_VERSION					NOC
+	#define C_VERSION				NOC
 
 #endif
 
 
 /******************************************************************************
-* C_STD_HOSTED definition, 1 hosted, 0 not hosted, -1 hosting is unknown
+* C_STD_HOSTED definition, 
+*	-   1 hosted (runs under an OS),
+*   -   0 freestanding (runs without an OS), 
+*   -  -1 hosting is unknown
 */
 #if defined(__STDC_HOSTED__)
-#define C_STD_HOSTED				__STDC_HOSTED__
+	#define C_STD_HOSTED			__STDC_HOSTED__
 #else
-#define C_STD_HOSTED				-1
+	#define C_STD_HOSTED			-1
 #endif
 
 

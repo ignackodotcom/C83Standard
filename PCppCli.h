@@ -22,7 +22,7 @@
 
 /* cpp cli none */
 #define NOCPPCLI							0L
-#define NOCXXCLI							NOCPPCLI
+#define NOCXXCLI							NOCPPCLI /* alias */
 
 #define CPPCLIPRE							1L
 #define CXXCLIPRE							CPPCLIPRE /* alias */

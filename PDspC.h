@@ -20,5 +20,8 @@
 
 /* RFU - reserved for future use */
 
+/* Basic symbolic constant for DSP C none */
+#define NODSPC							0L
+
 
 #endif /* PDSPC_H */
