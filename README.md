@@ -396,3 +396,4 @@ This library is licensed under the MIT License. See the LICENSE file for details
 | 2026 01 15 | Updated README.md for clarity and completeness         |
 | 2026 01 15 | Added support for Legacy MSVC as C89                   |
 | 2026 01 15 | Added NOECPP and NOECXX identification macros for ECPP |
+| 2026 01 16 | Removed support for Legacy MSVC as C89, bug fixed      |

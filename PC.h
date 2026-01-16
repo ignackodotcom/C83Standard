@@ -66,9 +66,6 @@
 
 	#if defined(__STDC_VERSION__)
 		#define C_VERSION			__STDC_VERSION__
-	#elif defined(_MSC_VER)
-		/* Legacy MSVC does not have __STDC_VERSION__, but it is approximately C89 */
-		#define C_VERSION			C89
 	#elif defined(__STDC__)
 		#define C_VERSION			C89
 	#else
