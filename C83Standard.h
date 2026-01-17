@@ -1,6 +1,6 @@
 /******************************************************************************
 * \file      C83Standard.h
-* \version   2026.01.01
+* \version   2026.01.17 26.00.01.01 (YYYYMMDD XXYYZZWW)
 * \author    Peter Potrok ( @ignackodotcom )
 *            ignacko.com@outlook.com
 *            https://github.com/ignackodotcom
@@ -14,7 +14,7 @@
 ******************************************************************************/
 
 #ifndef C83STANDARD_H
-#define C83STANDARD_H       20260101L
+#define C83STANDARD_H
 
 
 
@@ -26,10 +26,23 @@
 
 
 
+/******************************************************************************
+* version date format YYYYMMDD
+*/
+#define C83STANDARD_VERSION_DATE	20260117L
+
+/******************************************************************************
+* version number format XXYYZZWW
+*/
+#define C83STANDARD_VERSION_NUMBER  26000101L
+
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+    long C83STANDARD_DATE(void);
     long C83STANDARD_VERSION(void);
 
 #ifdef __cplusplus

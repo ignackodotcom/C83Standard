@@ -62,16 +62,24 @@ legacy toolchains, DOS‑based environments, and cross‑platform builds.
 | C_STD_HOSTED | 1 hosted, 0 freestanding, -1 unknown  |
 
 ### Supported C Standards
-| Macro | Meaning                                      |
-|-------|----------------------------------------------|
-| CKR   | K&R C (pre-ANSI)                             |
-| C89   | ANSI C (C89/C90)                             |
-| C95   | ISO C95                                      |
-| C99   | ISO C99                                      |
-| C11   | ISO C11                                      |
-| C17   | ISO C17                                      |
-| C23   | ISO C23                                      |
-| NOC   | Not a C environment (e.g., compiling as C++) |
+| Macro    | Meaning                                      |
+|----------|----------------------------------------------|
+| CKR      | K&R C (pre-ANSI)                             |
+| C89      | ANSI C (C89/C90)                             |
+| C89_MSVC | Microsoft Legacy MSVC                        |
+| C95      | ISO C95                                      |
+| C99      | ISO C99                                      |
+| C11      | ISO C11                                      |
+| C17      | ISO C17                                      |
+| C23      | ISO C23                                      |
+| NOC      | Not a C environment (e.g., compiling as C++) |
+
+Note: Legacy MSVC
+It does not correspond to a single strict ISO C standard version.
+Instead, it implements:
+- Not full support for C89/C90 (ISO/IEC 9899:1990, the original standardized C).
+- Partial support for some C99 features (but not complete conformance).
+- Various Microsoft-specific extensions and behaviors from older MSVC versions.
 
 ## C++ Standard Detection (PCpp.h)
 
@@ -159,6 +167,10 @@ To check which C standard is being used, you can use the predefined macros in co
     ...
     C89 code
     ...
+#elif C_VERSION == C89_MSVC
+    ...
+    C89_MSVC legacy code
+    ...
 #elif C_VERSION == C95
     ...
     C95 code
@@ -235,6 +247,15 @@ or using alias
 #endif
 ```
 
+### Cross Compilation Example (Conditional Compilation)
+```c
+#if C_VERSION >= C17 || CPP_VERSION >= CPP17
+    ...
+    Cross code
+    ...
+#endif
+```
+
 ### Detecting C++/CLI Standard
 To check which C++/CLI standard is being used, you can use the predefined macros in conditional compilation blocks.
 
@@ -293,10 +314,7 @@ or
 
 ## Example of versions detection
 ```c
-printf("STANDARD test\r\n");
-printf("\r\n");
-
-printf("C83STANDARD_VERSION() = %ld\r\n", C83STANDARD_VERSION());
+printf("C83STANDARD Library version = %ld %ld\r\n", C83STANDARD_DATE(), C83STANDARD_VERSION());
 printf("\r\n");
 
 /* versions detection 1 */
@@ -362,13 +380,13 @@ printf("\r\n");
 ```
 
 ## Compiler Compatibility
-| Compiler           | C Detection        | C++ Detection     | C++/CLI Detection | Embedded C++ Detection | Notes                   |
-|--------------------|--------------------|-------------------|-------------------|------------------------|-------------------------|
-| GCC                | Yes                | Yes               | No                | No                     |                         |
-| Clang              | Yes                | Yes               | No                | No                     |                         |
-| MSVC               | Yes (C89 fallback) | Yes               | Yes               | No                     |                         |
-| Turbo C++          | Yes                | Yes (Uses CPPPRE) | No                | No                     | Limited modern support  |
-| Embedded Compilers | Varies             | Varies            | No                | Yes                    | Check specific compiler |
+| Compiler           | C Detection                            | C++ Detection     | C++/CLI Detection | Embedded C++ Detection | Notes                   |
+|--------------------|----------------------------------------|-------------------|-------------------|------------------------|-------------------------|
+| GCC                | Yes                                    | Yes               | No                | No                     |                         |
+| Clang              | Yes                                    | Yes               | No                | No                     |                         |
+| MSVC               | Yes (With C89 fallback if Legacy MSVC) | Yes               | Yes               | No                     |                         |
+| Turbo C++          | Yes                                    | Yes (Uses CPPPRE) | No                | No                     | Limited modern support  |
+| Embedded Compilers | Yes / (Varies)                         | Yes / (Varies)    | No                | Yes                    | Check specific compiler |
 
 ## Best Practices
 - Use macros for conditional compilation.
@@ -383,17 +401,19 @@ This library is licensed under the MIT License. See the LICENSE file for details
 
 
 # Updates
-| YYYY MM DD | Brief description of updates                           |
-|------------|--------------------------------------------------------|
-| 2025 10 29 | Fixed error when detecting __cplusplus for Turbo C++   |
-| 2025 10 29 | NOC, NOCPP/NOCXX, NOCPPCLI/NOCXXCLI defines added      |
-| 2025 10 30 | C.h renamed to PC.h                                    |
-| 2025 10 30 | Cpp.h renamed to PCpp.h                                |
-| 2025 10 30 | CppCli.h renamed to PCppCli.h                          |
-| 2025 10 30 | DspC.h renamed to PDspC.h                              |
-| 2025 10 30 | ECpp.h renamed to PECpp.h                              |
-| 2025 10 30 | Description bug fixed                                  |
-| 2026 01 15 | Updated README.md for clarity and completeness         |
-| 2026 01 15 | Added support for Legacy MSVC as C89                   |
-| 2026 01 15 | Added NOECPP and NOECXX identification macros for ECPP |
-| 2026 01 16 | Removed support for Legacy MSVC as C89, bug fixed      |
+| YYYY MM DD | XX YY ZZ WW | Brief description of updates                           |
+|------------|-------------|--------------------------------------------------------|
+| 2025 10 29 |             | Fixed error when detecting __cplusplus for Turbo C++   |
+| 2025 10 29 |             | NOC, NOCPP/NOCXX, NOCPPCLI/NOCXXCLI defines added      |
+| 2025 10 30 |             | C.h renamed to PC.h                                    |
+| 2025 10 30 |             | Cpp.h renamed to PCpp.h                                |
+| 2025 10 30 |             | CppCli.h renamed to PCppCli.h                          |
+| 2025 10 30 |             | DspC.h renamed to PDspC.h                              |
+| 2025 10 30 |             | ECpp.h renamed to PECpp.h                              |
+| 2025 10 30 |             | Description bug fixed                                  |
+| 2026 01 15 |             | Updated README.md for clarity and completeness         |
+| 2026 01 15 |             | Added support for Legacy MSVC as C89                   |
+| 2026 01 15 |             | Added NOECPP and NOECXX identification macros for ECPP |
+| 2026 01 16 |             | Removed support for Legacy MSVC as C89, bug fixed      |
+| 2026 01 17 | 26 00 01 01 | Added full support for Legacy MSVC as C89_MSVC         |
+| 2026 01 17 | 26 00 01 01 | Project versioning modified                            |
