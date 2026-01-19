@@ -30,9 +30,6 @@
 /* official standard ANSI X3.159-1989 *//* ANSI C */
 #define C89							198901L
 
-/* Legacy MSVC since _MSC_VER 1900 (VS2015+) */
-#define C89_MSVC					198902L
-
 /* official standard ISO/IEC 9899:1990 *//* ANSI/ISO C */
 #define C90							C89
 
@@ -69,16 +66,6 @@
 
 	#if defined(__STDC_VERSION__)
 		#define C_VERSION			__STDC_VERSION__
-	#elif defined(_MSC_VER) && _MSC_VER >= 1900
-		/**********************************************************************
-		* Legacy MSVC
-		* It does not correspond to a single strict ISO C standard version.
-		* Instead, it implements:
-		* - Not full support for C89/C90 (ISO/IEC 9899:1990, the original standardized C).
-		* - Partial support for some C99 features (but not complete conformance).
-		* - Various Microsoft-specific extensions and behaviors from older MSVC versions.
-		**********************************************************************/ 
-		#define C_VERSION			C89_MSVC
 	#elif defined(__STDC__)
 		#define C_VERSION			C89
 	#else

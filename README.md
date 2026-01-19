@@ -66,7 +66,6 @@ legacy toolchains, DOS‑based environments, and cross‑platform builds.
 |----------|--------------------------------------------------------|
 | CKR      | K&R C (pre-ANSI) or Non standard C                     |
 | C89      | ANSI C (C89/C90)                                       |
-| C89_MSVC | Microsoft Legacy MSVC since _MSC_VER >= 1900 (VS2015+) |
 | C95      | ISO C95                                                |
 | C99      | ISO C99                                                |
 | C11      | ISO C11                                                |
@@ -166,10 +165,6 @@ To check which C standard is being used, you can use the predefined macros in co
 #elif C_VERSION == C89
     ...
     C89 code
-    ...
-#elif C_VERSION == C89_MSVC
-    ...
-    C89_MSVC legacy code
     ...
 #elif C_VERSION == C95
     ...
@@ -421,3 +416,4 @@ This library is licensed under the MIT License. See the LICENSE file for details
 | 2026 01 19 | 26 00 01 02 | Modified comment in Legacy MSVC in PC.h |
 | 2026 01 19 | 26 00 01 02 | Improved detection of legacy C89_MSVC from version _MSC_VER 1900 (VS2015+) |
 | 2026 01 19 | 26 00 01 03 | Supported C Standards table actualized |
+| 2026 01 19 | 26 00 02 01 | C89_MSVC definitively removed as nonsystematic option |
