@@ -62,17 +62,17 @@ legacy toolchains, DOS‑based environments, and cross‑platform builds.
 | C_STD_HOSTED | 1 hosted, 0 freestanding, -1 unknown  |
 
 ### Supported C Standards
-| Macro    | Meaning                                      |
-|----------|----------------------------------------------|
-| CKR      | K&R C (pre-ANSI)                             |
-| C89      | ANSI C (C89/C90)                             |
-| C89_MSVC | Microsoft Legacy MSVC                        |
-| C95      | ISO C95                                      |
-| C99      | ISO C99                                      |
-| C11      | ISO C11                                      |
-| C17      | ISO C17                                      |
-| C23      | ISO C23                                      |
-| NOC      | Not a C environment (e.g., compiling as C++) |
+| Macro    | Meaning                                                |
+|----------|--------------------------------------------------------|
+| CKR      | K&R C (pre-ANSI) or Non standard ANSI/ISO C            |
+| C89      | ANSI C (C89/C90)                                       |
+| C89_MSVC | Microsoft Legacy MSVC since _MSC_VER >= 1900 (VS2015+) |
+| C95      | ISO C95                                                |
+| C99      | ISO C99                                                |
+| C11      | ISO C11                                                |
+| C17      | ISO C17                                                |
+| C23      | ISO C23                                                |
+| NOC      | Not a C environment (e.g., compiling as C++)           |
 
 Note: Legacy MSVC
 It does not correspond to a single strict ISO C standard version.
@@ -420,3 +420,4 @@ This library is licensed under the MIT License. See the LICENSE file for details
 | 2026 01 19 | 26 00 01 02 | Modified comment for CKR (K&R C or non-standard C) in PC.h |
 | 2026 01 19 | 26 00 01 02 | Modified comment in Legacy MSVC in PC.h |
 | 2026 01 19 | 26 00 01 02 | Improved detection of legacy C89_MSVC from version _MSC_VER 1900 (VS2015+) |
+| 2026 01 19 | 26 00 01 03 | Supported C Standards table actualized |
