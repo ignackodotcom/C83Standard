@@ -73,13 +73,6 @@ legacy toolchains, DOS‑based environments, and cross‑platform builds.
 | C23      | ISO C23                                                |
 | NOC      | Not a C environment (e.g., compiling as C++)           |
 
-Note: Legacy MSVC
-It does not correspond to a single strict ISO C standard version.
-Instead, it implements:
-- Not full support for C89/C90 (ISO/IEC 9899:1990, the original standardized C).
-- Partial support for some C99 features (but not complete conformance).
-- Various Microsoft-specific extensions and behaviors from older MSVC versions.
-
 ## C++ Standard Detection (PCpp.h)
 
 ### Detection Macros
@@ -375,13 +368,13 @@ printf("\r\n");
 ```
 
 ## Compiler Compatibility
-| Compiler           | C Detection                            | C++ Detection     | C++/CLI Detection | Embedded C++ Detection | Notes                   |
-|--------------------|----------------------------------------|-------------------|-------------------|------------------------|-------------------------|
-| GCC                | Yes                                    | Yes               | No                | No                     |                         |
-| Clang              | Yes                                    | Yes               | No                | No                     |                         |
-| MSVC               | Yes (With C89 fallback if Legacy MSVC) | Yes               | Yes               | No                     |                         |
-| Turbo C++          | Yes                                    | Yes (Uses CPPPRE) | No                | No                     | Limited modern support  |
-| Embedded Compilers | Yes / (Varies)                         | Yes / (Varies)    | No                | Yes                    | Check specific compiler |
+| Compiler           | C Detection    | C++ Detection     | C++/CLI Detection | Embedded C++ Detection | Notes                   |
+|--------------------|----------------|-------------------|-------------------|------------------------|-------------------------|
+| GCC                | Yes            | Yes               | No                | No                     |                         |
+| Clang              | Yes            | Yes               | No                | No                     |                         |
+| MSVC               | Yes            | Yes               | Yes               | No                     |                         |
+| Turbo C++          | Yes            | Yes (Uses CPPPRE) | No                | No                     | Limited modern support  |
+| Embedded Compilers | Yes / (Varies) | Yes / (Varies)    | No                | Yes                    | Check specific compiler |
 
 ## Best Practices
 - Use macros for conditional compilation.
