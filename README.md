@@ -64,7 +64,7 @@ legacy toolchains, DOS‑based environments, and cross‑platform builds.
 ### Supported C Standards
 | Macro    | Meaning                                                |
 |----------|--------------------------------------------------------|
-| CKR      | K&R C (pre-ANSI) or Non standard ANSI/ISO C            |
+| CKR      | K&R C (pre-ANSI) or Non standard C                     |
 | C89      | ANSI C (C89/C90)                                       |
 | C89_MSVC | Microsoft Legacy MSVC since _MSC_VER >= 1900 (VS2015+) |
 | C95      | ISO C95                                                |
