@@ -29,12 +29,12 @@
 /******************************************************************************
 * version date format YYYYMMDD
 */
-#define C83STANDARD_VERSION_DATE	20260117L
+#define C83STANDARD_VERSION_DATE	20260119L
 
 /******************************************************************************
 * version number format XXYYZZWW
 */
-#define C83STANDARD_VERSION_NUMBER  26000101L
+#define C83STANDARD_VERSION_NUMBER  26000102L
 
 
 

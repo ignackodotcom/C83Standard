@@ -417,3 +417,6 @@ This library is licensed under the MIT License. See the LICENSE file for details
 | 2026 01 16 |             | Removed support for Legacy MSVC as C89, bug fixed      |
 | 2026 01 17 | 26 00 01 01 | Added full support for Legacy MSVC as C89_MSVC         |
 | 2026 01 17 | 26 00 01 01 | Project versioning modified                            |
+| 2026 01 19 | 26 00 01 02 | Modified comment for CKR (K&R C or non-standard C) in PC.h |
+| 2026 01 19 | 26 00 01 02 | Modified comment in Legacy MSVC in PC.h |
+| 2026 01 19 | 26 00 01 02 | Improved detection of legacy C89_MSVC from version _MSC_VER 1900 (VS2015+) |

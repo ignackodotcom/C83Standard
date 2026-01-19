@@ -17,20 +17,20 @@
 ******************************************************************************/
 
 #ifndef PC_H
-#define PC_H		20260117L
+#define PC_H		20260119L
 
 
 /* C none */
 #define NOC							0L
 
-/* non standard *//* do not use */
+/* K&R C or non standard C */
 #define CKR							197801L
 #define C78							CKR /* alias */
 
 /* official standard ANSI X3.159-1989 *//* ANSI C */
 #define C89							198901L
 
-/* Legacy MSVC */
+/* Legacy MSVC since _MSC_VER 1900 (VS2015+) */
 #define C89_MSVC					198902L
 
 /* official standard ISO/IEC 9899:1990 *//* ANSI/ISO C */
@@ -69,7 +69,7 @@
 
 	#if defined(__STDC_VERSION__)
 		#define C_VERSION			__STDC_VERSION__
-	#elif defined(_MSC_VER)
+	#elif defined(_MSC_VER) && _MSC_VER >= 1900
 		/**********************************************************************
 		* Legacy MSVC
 		* It does not correspond to a single strict ISO C standard version.
